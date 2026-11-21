@@ -1,0 +1,699 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Ihtoi ♡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff0f5;
+  color: #79546a;
+  font-family: Poppins, sans-serif;
+  overflow-x: hidden;
+}
+
+.screen {
+  min-height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 35px 18px;
+  position: relative;
+}
+
+.screen.active {
+  display: flex;
+  animation: show .7s ease;
+}
+
+@keyframes show {
+  from {opacity: 0; transform: translateY(15px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  color: #bd7798;
+}
+
+h1 {
+  font-size: clamp(42px, 9vw, 75px);
+}
+
+h2 {
+  font-size: 34px;
+  margin-bottom: 18px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 2;
+}
+
+.small {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 10px;
+  margin-bottom: 18px;
+}
+
+.card {
+  max-width: 550px;
+  width: 100%;
+  padding: 35px 27px;
+  background: #ffffffdc;
+  border: 1px solid white;
+  border-radius: 25px;
+  box-shadow: 0 10px 35px #bd779822;
+}
+
+button {
+  background: #d48eae;
+  color: white;
+  border: 0;
+  padding: 13px 25px;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 12px 5px;
+  transition: .3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  background: #b96f92;
+}
+
+.emoji {
+  font-size: 55px;
+  margin-bottom: 18px;
+}
+
+.letter {
+  text-align: left;
+  line-height: 2.1;
+  font-size: 13px;
+}
+
+.box {
+  background: #fce4ed;
+  padding: 20px;
+  border-radius: 18px;
+  margin: 14px 0;
+}
+
+.box button {
+  margin: 5px;
+}
+
+input {
+  padding: 13px;
+  border: 1px solid #e8b6cc;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 300px;
+  font-family: inherit;
+  outline: none;
+}
+
+.floating {
+  position: fixed;
+  bottom: -30px;
+  z-index: 10;
+  pointer-events: none;
+  animation: float 8s linear forwards;
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.final {
+  background: linear-gradient(140deg,#ffe1ed,#e9e1fa,#e1efff);
+}
+
+footer {
+  font-size: 11px;
+  margin-top: 25px;
+}
+
+#result, #giftResult, #hugText, #secretResult {
+  margin-top: 15px;
+  min-height: 35px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="floating"></div>
+
+<!-- PAGE 1 WELCOME -->
+<section class="screen active" id="p1">
+
+  <div class="emoji">🎀</div>
+
+  <p class="small">a little birthday surprise</p>
+
+  <h1>Happy Birthday<br>Ihtoi ♡</h1>
+
+  <p style="margin:20px">
+    A little website for my favourite human
+  </p>
+
+  <button onclick="go(2)">
+    OPEN YOUR GIFT 💌
+  </button>
+
+</section>
+
+
+<!-- PAGE 2 ENVELOPE -->
+<section class="screen" id="p2">
+
+  <div class="card">
+
+    <div class="emoji">💌</div>
+
+    <p class="small">you have a letter</p>
+
+    <h2>For you, Ihtoi</h2>
+
+    <p>
+      Someone has been wanting to tell you
+      a few things today
+    </p>
+
+    <button onclick="go(3)">
+      OPEN THE LETTER ♡
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 3 INTRO LETTER -->
+<section class="screen" id="p3">
+
+  <div class="card">
+
+    <div class="emoji">🌷</div>
+
+    <h2>Dear Ihtoi</h2>
+
+    <p class="letter">
+      Happiest birthdayyyyy to youuu 😭💗
+
+      <br><br>
+
+      I honestly feel so lucky to have you in my life
+
+      You're one of the sweetest people I've ever met
+      and I hope you know how much I appreciate you
+
+      <br><br>
+
+      I love our random conversations, our BL drama
+      discussions and all the little things we share
+
+      <br><br>
+
+      But most importantly I love YOU and the
+      beautiful person you are
+    </p>
+
+    <button onclick="go(4)">
+      NEXT MY GIRL 🎀
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 4 FRIENDSHIP -->
+<section class="screen" id="p4">
+
+  <div class="card">
+
+    <h2>Things I adore about you</h2>
+
+    <div class="box">♡ Your kindness</div>
+
+    <div class="box">
+      ♡ How you notice the smallest details
+    </div>
+
+    <div class="box">
+      ♡ How sweet you are to me
+    </div>
+
+    <div class="box">
+      ♡ Our endless conversations
+    </div>
+
+    <div class="box">
+      ♡ Simply having you around
+    </div>
+
+    <p>
+      Never stop being this lovely person 🥹
+    </p>
+
+    <button onclick="go(5)">
+      NEXT ♡
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 5 BL QUIZ -->
+<section class="screen" id="p5">
+
+  <div class="card">
+
+    <div class="emoji">🎬</div>
+
+    <p class="small">very serious investigation</p>
+
+    <h2>BL bestie quiz</h2>
+
+    <p>
+      What is our favourite kind of conversation?
+    </p>
+
+    <div class="box">
+
+      <button onclick="answer()">
+        BL drama gossip 😭
+      </button>
+
+      <button onclick="answer()">
+        Discussing fictional couples 💗
+      </button>
+
+      <button onclick="answer()">
+        Analysing every little scene 👀
+      </button>
+
+    </div>
+
+    <p id="result"></p>
+
+    <button id="quizNext"
+      style="display:none"
+      onclick="go(6)">
+      CONTINUE 🎀
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 6 RANDOM SURPRISE -->
+<section class="screen" id="p6">
+
+  <div class="card">
+
+    <div class="emoji">🧸</div>
+
+    <h2>Pick a little gift</h2>
+
+    <p>
+      Choose any box and see what's inside
+    </p>
+
+    <div class="box">
+
+      <button onclick="gift(1)">🎁</button>
+
+      <button onclick="gift(2)">🎀</button>
+
+      <button onclick="gift(3)">💌</button>
+
+    </div>
+
+    <h2 id="giftResult" style="font-size:23px"></h2>
+
+    <button onclick="go(7)">
+      NEXT ♡
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 7 SUPPORT LETTER -->
+<section class="screen" id="p7">
+
+  <div class="card">
+
+    <div class="emoji">🫂</div>
+
+    <p class="small">please remember this</p>
+
+    <h2>You can lean on me</h2>
+
+    <p class="letter">
+
+      I hope you know that you never have to
+      pretend to be okay around me
+
+      <br><br>
+
+      Whenever the world feels too heavy,
+      whenever life gets confusing or everything
+      feels like too much, please come to me
+
+      <br><br>
+
+      You don't always have to be strong
+
+      You can rant, cry, complain, talk nonsense
+      or simply sit in silence
+
+      <br><br>
+
+      I might not always know how to fix everything
+      but I'll always try my best to make you feel
+      a little less alone
+
+      <br><br>
+
+      Your feelings are never a burden to me
+
+      You deserve all the love and gentleness
+      you give to everyone else
+
+      <br><br>
+
+      So whenever life gets difficult, remember
+      you have me in your corner
+
+      Always and always ♡
+
+    </p>
+
+    <button onclick="go(8)">
+      I LOVE YOU 🥹
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 8 VIRTUAL HUG -->
+<section class="screen" id="p8">
+
+  <div class="card">
+
+    <div class="emoji" id="hug">🫂</div>
+
+    <h2>A hug from me</h2>
+
+    <p>
+      Press the button to receive your
+      unlimited virtual hugs
+    </p>
+
+    <button onclick="hugMe()">
+      SEND A HUG 💗
+    </button>
+
+    <p id="hugText"></p>
+
+    <button onclick="go(9)">
+      NEXT ♡
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 9 MEETING WISH -->
+<section class="screen" id="p9">
+
+  <div class="card">
+
+    <div class="emoji">🌍</div>
+
+    <h2>One day, hopefully</h2>
+
+    <p>
+
+      I really really hope we get to meet
+      in real life soon
+
+      <br><br>
+
+      I want to sit with you, talk for hours,
+      discuss our favourite dramas, laugh at
+      the most random things and finally make
+      memories that don't exist only on a screen
+
+      <br><br>
+
+      Until then, distance won't make me
+      care any less
+
+      <br><br>
+
+      Sending you the biggest hug ever 🫂
+
+    </p>
+
+    <button onclick="go(10)">
+      ONE SECRET LEFT ✨
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 10 SECRET UNLOCK -->
+<section class="screen" id="p10">
+
+  <div class="card">
+
+    <div class="emoji">🔐</div>
+
+    <p class="small">a secret birthday message</p>
+
+    <h2>Unlock your surprise</h2>
+
+    <p>
+      Enter the secret password
+    </p>
+
+    <input
+      id="password"
+      placeholder="Type your secret word"
+      onkeydown="if(event.key==='Enter') unlock()"
+    >
+
+    <br>
+
+    <button onclick="unlock()">
+      UNLOCK 💌
+    </button>
+
+    <p id="secretResult"></p>
+
+    <button
+      id="lastButton"
+      style="display:none"
+      onclick="go(11)">
+      OPEN FINAL SURPRISE ♡
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 11 FINAL -->
+<section class="screen final" id="p11">
+
+  <div class="emoji">🎂💗🎀</div>
+
+  <p class="small">made with endless love</p>
+
+  <h1>Happy Birthday<br>Ihtoi!</h1>
+
+  <p style="max-width:430px;margin:20px">
+
+    I hope this year brings you beautiful memories,
+    genuine happiness, peaceful days and everything
+    your heart has been wishing for
+
+  </p>
+
+  <h2>I LOVE YOU SO MUCH ♡</h2>
+
+  <p>
+    Thank you for existing in my little world
+  </p>
+
+  <div style="font-size:35px;margin:20px">
+    🦢🌷💌✨
+  </div>
+
+  <button onclick="celebrate()">
+    MAKE A WISH 🎉
+  </button>
+
+  <footer>
+    forever your birthday well-wisher ♡
+  </footer>
+
+</section>
+
+
+<script>
+
+function go(n) {
+
+  document.querySelectorAll('.screen').forEach(s => {
+    s.classList.remove('active');
+  });
+
+  document.getElementById('p' + n).classList.add('active');
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+
+}
+
+
+function answer() {
+
+  document.getElementById('result').innerText =
+    "CORRECT ANSWER 😭💗 Honestly all of the above";
+
+  document.getElementById('quizNext').style.display =
+    'inline-block';
+
+}
+
+
+function gift(n) {
+
+  const gifts = {
+
+    1: "Your lifetime supply of hugs 🫂",
+
+    2: "A thousand bows and kisses 🎀",
+
+    3: "A reminder that you're loved so much 💌"
+
+  };
+
+  document.getElementById('giftResult').innerText =
+    gifts[n];
+
+}
+
+
+function hugMe() {
+
+  document.getElementById('hug').innerText =
+    '💗🫂💗';
+
+  document.getElementById('hugText').innerText =
+    "HUG DELIVERED!! No returning this one 😭";
+
+}
+
+
+function unlock() {
+
+  const value = document.getElementById('password')
+    .value.trim().toLowerCase();
+
+  if(value === "ihtoi") {
+
+    document.getElementById('secretResult').innerText =
+      "YOU DID IT!! Your secret message is that you're one of my favourite people 💗";
+
+    document.getElementById('lastButton').style.display =
+      'inline-block';
+
+  } else {
+
+    document.getElementById('secretResult').innerText =
+      "Oopsieee, try again birthday girl 🎀";
+
+  }
+
+}
+
+
+function createFloat() {
+
+  const el = document.createElement('div');
+
+  el.className = 'floating';
+
+  el.innerText = ['💗','🎀','✨','🌷','🦋'][
+    Math.floor(Math.random()*5)
+  ];
+
+  el.style.left = Math.random()*100 + 'vw';
+
+  el.style.fontSize =
+    (20 + Math.random()*20) + 'px';
+
+  document.body.appendChild(el);
+
+  setTimeout(() => el.remove(), 8000);
+
+}
+
+
+function celebrate() {
+
+  for(let i=0; i<45; i++) {
+
+    setTimeout(createFloat, i*35);
+
+  }
+
+  alert("HAPPY BIRTHDAY IHTOI!!!! 🎂💗");
+
+}
+
+
+// Floating decorations
+setInterval(createFloat, 1100);
+
+</script>
+
+</body>
+</html>
